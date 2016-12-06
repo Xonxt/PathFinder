@@ -104,7 +104,7 @@ public class GameMap extends JComponent {
                 double velX = (tx/dist) * movementSpeed;
                 double velY = (ty/dist) * movementSpeed;
 
-                while(dist > 0.1) {
+                while(dist > 1) {
 
                     try {
                         Thread.sleep(2);
@@ -134,6 +134,10 @@ public class GameMap extends JComponent {
         this.cellMap = cellMap;
 
         player.setCurrentCell(cellMap[0][0]);
+
+        isMoving = false;
+
+        player.setMoving(false);
 
         player.setVisible(true);
     }
